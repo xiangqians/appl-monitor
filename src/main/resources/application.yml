@@ -1,0 +1,33 @@
+server:
+  port: 9200
+  servlet:
+    context-path: /
+
+spring:
+  application:
+    name: '@artifactId@'
+  profiles:
+    active: dev
+
+  security:
+    user:
+      name: admin
+      password: admin
+
+  # boot admin
+  boot:
+    admin:
+      ui:
+        title: Application Monitoring Center
+        brand: '<img src="assets/img/icon-spring-boot-admin.svg"><span>Application Monitoring Center</span>'
+      probed-endpoints: '*'
+      monitor:
+        # 单位: ms
+        status-lifetime: 2000
+        status-interval: 2000
+        default-timeout: 2000
+        default-retries: 0
+
+      client:
+        actuator:
+          secret: h!Fra!NUB^LRXN~Xo@%ku2?nKWunf!&U
